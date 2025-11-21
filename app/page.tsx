@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import {
   Menu,
   X,
@@ -33,18 +34,20 @@ const Portfolio = () => {
 
   const projects = [
     {
-      title: "NetFlix Clone",
+      title: "Netflix Clone",
       description:
-        "A Netflix-style movie streaming app built with React, Vite, and Firebase. Features user authentication, movie browsing UI, dynamic content rendering using TMDB API, responsive design, and protected routes. Built to practice modern frontend architecture and real-world app structure.",
+        "A Netflix-style streaming app built with React, Vite, and Firebase. Features user authentication, movie browsing UI, dynamic content rendering using TMDB API, responsive design, and protected routes. Built to practice real-world app structure.",
       tags: ["React", "Firebase", "Tailwind"],
       link: "https://chris-movie-app.vercel.app/",
+      image: "/NetflixClone.png",
     },
     {
       title: "Ultraverse",
       description:
-        "The final product of my internship with Frontend Simplified. This internship consisted of converting a static website into a dynamic application using various Node.js libraries such as Axios, Owl Carousel, and Animate on Scroll. Maintained version control with repository branches and pull requests on github.",
+        "This internship consisted of converting a static website into a dynamic application using various Node.js libraries such as Axios, Owl Carousel, and Animate on Scroll. Maintained version control with repository branches and pull requests on github.",
       tags: ["React", "JavaScript", "Node.js", "Git"],
       link: "https://chris-internship-npxwbthbx-chrislanzas16s-projects.vercel.app/",
+      image: "/Ultraverse.png",
     },
     {
       title: "Summarist",
@@ -52,6 +55,7 @@ const Portfolio = () => {
         "Subscription-based book streaming platform built with Next.js, Firebase, and Stripe. Features secure authentication, responsive UI, and an integrated audio player for listening to books in the browser.",
       tags: ["Next.js", "Firebase", "Tailwind CSS"],
       link: "https://virtual-internship-v2-zeta.vercel.app/",
+      image: "/Summarist.png",
     },
   ];
 
@@ -130,7 +134,7 @@ const Portfolio = () => {
                 <div
                   className={`text-2xl font-bold bg-linear-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent`}
                 >
-                  Christopher Lanzas
+                  Frontend Developer
                 </div>
 
                 {/* Desktop Menu */}
@@ -235,21 +239,21 @@ const Portfolio = () => {
           </nav>
 
           {/* Hero Section */}
-          <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+          <section className="relative overflow-hidden mt-16 min-h-[calc(100vh-64px)] flex items-center justify-center px-4 sm:px-6 lg:px-8">
             <div className="max-w-6xl mx-auto text-center">
               <h1
                 className={`text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 ${
                   isDarkMode ? "text-white" : "text-gray-900"
                 }`}
               >
-                Frontend Developer
+                Hey I&apos;m Chris.
               </h1>
               <p
                 className={`text-xl sm:text-2xl mb-8 max-w-2xl mx-auto ${
                   isDarkMode ? "text-gray-300" : "text-gray-600"
                 }`}
               >
-                Building{" "}
+                I like building{" "}
                 <span
                   className={`font-bold bg-linear-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent hover:scale-110 inline-block transition-transform cursor-default`}
                 >
@@ -261,7 +265,7 @@ const Portfolio = () => {
                 >
                   responsive
                 </span>{" "}
-                web applications with React, Next.js & Firebase
+                web applications with React, Next.js & Typescript.
               </p>
               <div className="flex justify-center gap-4 flex-wrap">
                 <button
@@ -379,50 +383,58 @@ const Portfolio = () => {
                 {projects.map((project, index) => (
                   <div
                     key={index}
-                    className={`rounded-xl p-6 border transition-all ${
+                    className={`group relative h-72 md:h-80 rounded-2xl overflow-hidden  border transition-all ${
                       isDarkMode
                         ? "bg-slate-800/50 border-purple-500/20 hover:border-purple-500/50 hover:shadow-lg hover:shadow-purple-500/20"
                         : "bg-white border-purple-200 hover:border-purple-400 hover:shadow-xl"
                     }`}
                   >
-                    <h3
-                      className={`text-xl font-bold mb-3 ${
-                        isDarkMode ? "text-white" : "text-gray-900"
-                      }`}
-                    >
-                      {project.title}
-                    </h3>
-                    <p
-                      className={`mb-4 ${
-                        isDarkMode ? "text-gray-400" : "text-gray-600"
-                      }`}
-                    >
-                      {project.description}
-                    </p>
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {project.tags.map((tag, i) => (
-                        <span
-                          key={i}
-                          className={`px-3 py-1 rounded-full text-sm ${
-                            isDarkMode
-                              ? "bg-purple-500/20 text-purple-300"
-                              : "bg-purple-100 text-purple-700"
-                          }`}
-                        >
-                          {tag}
-                        </span>
-                      ))}
+                    <Image
+                      src={project.image}
+                      alt={`${project.title} screenshot`}
+                      fill
+                      className="object-contain object-center bg-slate-900 duration-500 group-hover:scale-105 transition-transform"
+                    />
+
+                    <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex h-full flex-col p-6 justify-end">
+                    <div className="opacity-0 translate-y-2 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
+                      <h3
+                        className={`text-xl font-bold mb-3 text-white`}
+                      >
+                        {project.title}
+                      </h3>
+                      <p
+                        className={`mb-4 text-white`}
+                      >
+                        {project.description}
+                      </p>
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {project.tags.map((tag, i) => (
+                          <span
+                            key={i}
+                            className={`px-3 py-1 rounded-full text-sm ${
+                              isDarkMode
+                                ? "bg-purple-500/20 text-purple-300"
+                                : "bg-purple-100 text-purple-700"
+                            }`}
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                      <a
+                        href={project.link}
+                        className={`inline-flex items-center gap-2 transition-colors ${
+                          isDarkMode
+                            ? "text-purple-400 hover:text-purple-300"
+                            : "text-purple-600 hover:text-purple-700"
+                        }`}
+                      >
+                        View Project <ExternalLink size={16} />
+                      </a>
+                      </div>
+
                     </div>
-                    <a
-                      href={project.link}
-                      className={`inline-flex items-center gap-2 transition-colors ${
-                        isDarkMode
-                          ? "text-purple-400 hover:text-purple-300"
-                          : "text-purple-600 hover:text-purple-700"
-                      }`}
-                    >
-                      View Project <ExternalLink size={16} />
-                    </a>
                   </div>
                 ))}
               </div>
