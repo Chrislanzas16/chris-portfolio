@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import {
   Menu,
@@ -40,14 +40,16 @@ const Portfolio = () => {
       tags: ["React", "Firebase", "Tailwind"],
       link: "https://chris-movie-app.vercel.app/",
       image: "/NetflixClone.png",
+      github: "https://github.com/Chrislanzas16/Netflix-Clone.git",
     },
     {
       title: "Ultraverse",
       description:
-        "This internship consisted of converting a static website into a dynamic application using various Node.js libraries such as Axios, Owl Carousel, and Animate on Scroll. Maintained version control with repository branches and pull requests on github.",
+        "This internship consisted of converting a static website into a dynamic application using various Node.js libraries such as Axios, Owl Carousel, and Animate on Scroll. Maintained version control with repository branches and pull requests on Github.",
       tags: ["React", "JavaScript", "Node.js", "Git"],
       link: "https://chris-internship-npxwbthbx-chrislanzas16s-projects.vercel.app/",
       image: "/Ultraverse.png",
+      github: "https://github.com/Chrislanzas16/chris-internship.git",
     },
     {
       title: "Summarist",
@@ -56,6 +58,7 @@ const Portfolio = () => {
       tags: ["Next.js", "Firebase", "Tailwind CSS"],
       link: "https://virtual-internship-v2-zeta.vercel.app/",
       image: "/Summarist.png",
+      github: "https://github.com/Chrislanzas16/Virtual-Internship-v2.git",
     },
   ];
 
@@ -78,9 +81,50 @@ const Portfolio = () => {
     },
     {
       category: "Tools & Others",
-      items: ["Git", "Vercel", "Figma", "Responsive Design"],
+      items: [
+        "Git",
+        "Vite",
+        "Vercel",
+        "Figma",
+        "Responsive UI / Mobile-First Design",
+      ],
     },
   ];
+
+  const skillLogos: Record<string, string> = {
+    React: "/skills/react.svg",
+    "Next.js": "/skills/next.svg",
+    TypeScript: "/skills/typescript.svg",
+    JavaScript: "/skills/javascript.svg",
+    "Tailwind CSS": "/skills/tailwind-css.svg",
+    HTML: "/skills/html.svg",
+    CSS: "/skills/css.svg",
+
+    Firebase: "/skills/firebase.svg",
+    Firestore: "/skills/firebase.svg",
+    "Firebase Auth": "/skills/firebase.svg",
+    "Cloud Functions": "/skills/firebase.svg",
+
+    Git: "/skills/git.svg",
+    Vercel: "/skills/vercel.png",
+    Figma: "/skills/figma.svg",
+    "Responsive UI / Mobile-First Design": "/skills/responsive.svg.png",
+    Vite: "/skills/vite.svg",
+  };
+
+  const [mousePos, setMousePos] = useState<{ x: number; y: number }>({
+    x: 0,
+    y: 0,
+  });
+
+  useEffect(() => {
+    const handleMove = (e: MouseEvent) => {
+      setMousePos({ x: e.clientX, y: e.clientY });
+    };
+
+    window.addEventListener("mousemove", handleMove);
+    return () => window.removeEventListener("mousemove", handleMove);
+  }, []);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -100,23 +144,21 @@ const Portfolio = () => {
         {/* Animated Background Elements */}
         <div className="fixed inset-0 overflow-hidden pointer-events-none">
           <div
-            className={`absolute top-1/4 left-1/4 w-96 h-96 rounded-full blur-3xl opacity-20 animate-pulse ${
-              isDarkMode ? "bg-purple-500" : "bg-purple-300"
-            }`}
-            style={{ animationDuration: "4s" }}
-          ></div>
-          <div
-            className={`absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full blur-3xl opacity-20 animate-pulse ${
-              isDarkMode ? "bg-pink-500" : "bg-pink-300"
-            }`}
-            style={{ animationDuration: "6s", animationDelay: "2s" }}
-          ></div>
-          <div
-            className={`absolute top-1/2 left-1/2 w-96 h-96 rounded-full blur-3xl opacity-10 animate-pulse ${
+            className={`absolute left-1/2 top-[45%] -translate-x-1/2 -translate-y-1/2 
+              w-md h-112 rounded-full blur-3xl opacity-10 animate-pulse ${
               isDarkMode ? "bg-blue-500" : "bg-blue-300"
             }`}
             style={{ animationDuration: "8s", animationDelay: "4s" }}
           ></div>
+
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background: `radial-gradient(420px circle at ${mousePos.x}px ${mousePos.y}px, rgba(236,72,153,0.35), transparent 65%)`,
+              transition: "background 0.12s ease-out",
+              mixBlendMode: "screen",
+            }}
+          />
         </div>
         ```
         {/* Content Wrapper */}
@@ -249,7 +291,7 @@ const Portfolio = () => {
                 Hey I&apos;m Chris.
               </h1>
               <p
-                className={`text-xl sm:text-2xl mb-8 max-w-2xl mx-auto ${
+                className={`text-xl sm:text-2xl mb-8 max-w-2xl mx-auto fade-in-up ${
                   isDarkMode ? "text-gray-300" : "text-gray-600"
                 }`}
               >
@@ -307,7 +349,7 @@ const Portfolio = () => {
                 </h2>
               </div>
               <div
-                className={`rounded-2xl p-8 border transition-colors ${
+                className={`rounded-2xl p-8 border transition-all duration-200 hover:-translate-y-2 hover:shadow-xl ${
                   isDarkMode
                     ? "bg-slate-800/50 border-purple-500/20"
                     : "bg-white border-purple-200 shadow-lg"
@@ -322,9 +364,9 @@ const Portfolio = () => {
                   <span
                     className={`font-semibold bg-linear-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent hover:scale-105 inline-block transition-transform cursor-default`}
                   >
-                    passionate
+                    frontend developer
                   </span>{" "}
-                  frontend developer specializing in{" "}
+                  who builds fast, responsive web applications with{" "}
                   <span
                     className={`font-semibold bg-linear-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent hover:scale-105 inline-block transition-transform cursor-default`}
                   >
@@ -336,31 +378,47 @@ const Portfolio = () => {
                   >
                     Next.js
                   </span>{" "}
-                  with Firebase integration. I focus on creating beautiful,
-                  responsive user interfaces with{" "}
+                  with Firebase integration. I specialize in real-time features,
+                  Firebase authentication, and data-driven interfaces that stay
+                  clean,{" "}
                   <span
                     className={`font-semibold bg-linear-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent hover:scale-105 inline-block transition-transform cursor-default`}
                   >
-                    seamless
+                    maintainable,
                   </span>{" "}
-                  real-time functionality and smooth user experiences.
+                  and easy for teams to work with.
                 </p>
                 <p
-                  className={`text-lg leading-relaxed ${
+                  className={`text-lg leading-relaxed mt-4 ${
                     isDarkMode ? "text-gray-300" : "text-gray-700"
                   }`}
                 >
-                  My expertise lies in modern frontend technologies,
-                  component-based architecture, and leveraging Firebase for
-                  authentication, real-time databases, and cloud functions.
-                  I&apos;m committed to writing{" "}
+                  I focus on component-based architecture, performance
+                  optimization, and scalable state management to build apps that
+                  feel smooth for users and reliable for developers. My approach
+                  combines technical precision with{" "}
                   <span
                     className={`font-semibold bg-linear-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent hover:scale-105 inline-block transition-transform cursor-default`}
                   >
                     {" "}
-                    clean, maintainable code
+                    user-centered design,
                   </span>{" "}
-                  and staying up-to-date with the latest web development trends.
+                  ensuring what I build is both powerful and intuitive.
+                </p>
+
+                <p
+                  className={`text-lg leading-relaxed mt-4 ${
+                    isDarkMode ? "text-gray-300" : "text-gray-700"
+                  }`}
+                >
+                  I stay current with modern web practices and am excited to
+                  contribute to{" "}
+                  <span
+                    className={`font-semibold bg-linear-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent hover:scale-105 inline-block transition-transform cursor-default`}
+                  >
+                    meaningful projects
+                  </span>{" "}
+                  where I can continue growing as a developer.
                 </p>
               </div>
             </div>
@@ -397,43 +455,51 @@ const Portfolio = () => {
                     />
 
                     <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex h-full flex-col p-6 justify-end">
-                    <div className="opacity-0 translate-y-2 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
-                      <h3
-                        className={`text-xl font-bold mb-3 text-white`}
-                      >
-                        {project.title}
-                      </h3>
-                      <p
-                        className={`mb-4 text-white`}
-                      >
-                        {project.description}
-                      </p>
-                      <div className="flex flex-wrap gap-2 mb-4">
-                        {project.tags.map((tag, i) => (
-                          <span
-                            key={i}
-                            className={`px-3 py-1 rounded-full text-sm ${
+                      <div className="opacity-0 translate-y-2 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
+                        <h3 className={`text-xl font-bold mb-3 text-white`}>
+                          {project.title}
+                        </h3>
+                        <p className={`mb-4 text-white`}>
+                          {project.description}
+                        </p>
+                        <div className="flex flex-wrap gap-2 mb-4">
+                          {project.tags.map((tag, i) => (
+                            <span
+                              key={i}
+                              className={`px-3 py-1 rounded-full text-sm ${
+                                isDarkMode
+                                  ? "bg-purple-500/20 text-purple-300"
+                                  : "bg-purple-100 text-purple-700"
+                              }`}
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                        <div className="mt-4 flex items-center gap-4">
+                          <a
+                            href={project.link}
+                            className={`inline-flex items-center gap-2 transition-colors ${
                               isDarkMode
-                                ? "bg-purple-500/20 text-purple-300"
-                                : "bg-purple-100 text-purple-700"
+                                ? "text-purple-400 hover:text-purple-300"
+                                : "text-purple-600 hover:text-purple-700"
                             }`}
                           >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                      <a
-                        href={project.link}
-                        className={`inline-flex items-center gap-2 transition-colors ${
-                          isDarkMode
-                            ? "text-purple-400 hover:text-purple-300"
-                            : "text-purple-600 hover:text-purple-700"
-                        }`}
-                      >
-                        View Project <ExternalLink size={16} />
-                      </a>
-                      </div>
+                            View Project <ExternalLink size={16} />
+                          </a>
 
+                          <a
+                            href={project.github}
+                            className={`inline-flex items-center gap-2 transition-colors ${
+                              isDarkMode
+                                ? "text-purple-400 hover:text-purple-300"
+                                : "text-purple-600 hover:text-purple-700"
+                            }`}
+                          >
+                            View Code <Github size={16} />
+                          </a>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -463,7 +529,7 @@ const Portfolio = () => {
                 {skills.map((skillGroup, index) => (
                   <div
                     key={index}
-                    className={`rounded-xl p-6 border transition-colors ${
+                    className={`rounded-xl p-6 border transition-all duration-200 hover:-translate-y-1 hover:shadow-xl hover:border-purple-400/60 ${
                       isDarkMode
                         ? "bg-slate-800/50 border-purple-500/20"
                         : "bg-white border-purple-200 shadow-lg"
@@ -472,16 +538,26 @@ const Portfolio = () => {
                     <h3 className="text-xl font-bold text-purple-400 mb-4">
                       {skillGroup.category}
                     </h3>
-                    <ul className="space-y-2">
+                    <ul className="space-y-4">
                       {skillGroup.items.map((skill, i) => (
                         <li
                           key={i}
-                          className={`flex items-center gap-2 ${
+                          className={`flex items-center gap-3 transition-transform duration-150 hover:translate-x-1 hover:text-purple-300 ${
                             isDarkMode ? "text-gray-300" : "text-gray-700"
                           }`}
                         >
-                          <span className="w-2 h-2 bg-purple-400 rounded-full"></span>
-                          {skill}
+                          {skillLogos[skill] ? (
+                            <Image
+                              src={skillLogos[skill]}
+                              alt={`${skill} logo`}
+                              width={30}
+                              height={30}
+                              className="w-6 h-6 object-contain"
+                            />
+                          ) : (
+                            <span className="w-3 h-3 bg-purple-400 rounded-full" />
+                          )}
+                          <span>{skill}</span>
                         </li>
                       ))}
                     </ul>
@@ -581,7 +657,6 @@ const Portfolio = () => {
           </footer>
         </div>
       </div>
-      ```
     </>
   );
 };
