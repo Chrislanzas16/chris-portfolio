@@ -146,8 +146,8 @@ const Portfolio = () => {
           <div
             className={`absolute left-1/2 top-[45%] -translate-x-1/2 -translate-y-1/2 
               w-md h-112 rounded-full blur-3xl opacity-10 animate-pulse ${
-              isDarkMode ? "bg-blue-500" : "bg-blue-300"
-            }`}
+                isDarkMode ? "bg-blue-500" : "bg-blue-300"
+              }`}
             style={{ animationDuration: "8s", animationDelay: "4s" }}
           ></div>
 
@@ -455,11 +455,24 @@ const Portfolio = () => {
                     />
 
                     <div className="absolute inset-0 bg-black/80 opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex h-full flex-col p-6 justify-end">
-                      <div className="opacity-100 md:opacity-0 translate-y-2 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
-                        <h3 className={`text-xl font-bold mb-3 text-white`}>
+                      <div
+                        className="
+                          absolute inset-x-0 bottom-0
+                          md:inset-0
+                          bg-linear-to-t from-black/80 via-black/60 to-transparent
+                          opacity-100
+                          md:opacity-0 md:group-hover:opacity-100
+                          transition-opacity duration-500
+                          px-4 py-4 md:p-6
+                          flex flex-col justify-end
+                        "
+                      >
+                        <h3
+                          className={`md:text-xl text-lg font-bold mb-2 text-white`}
+                        >
                           {project.title}
                         </h3>
-                        <p className={`mb-4 text-white`}>
+                        <p className={`text-sm md:text-base mb-4 text-white`}>
                           {project.description}
                         </p>
                         <div className="flex flex-wrap gap-2 mb-4">
