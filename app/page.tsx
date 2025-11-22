@@ -454,8 +454,8 @@ const Portfolio = () => {
                       className="object-contain object-center bg-slate-900 duration-500 group-hover:scale-105 transition-transform"
                     />
 
-                    <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex h-full flex-col p-6 justify-end">
-                      <div className="opacity-0 translate-y-2 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
+                    <div className="absolute inset-0 bg-black/80 opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex h-full flex-col p-6 justify-end">
+                      <div className="opacity-100 md:opacity-0 translate-y-2 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
                         <h3 className={`text-xl font-bold mb-3 text-white`}>
                           {project.title}
                         </h3>
