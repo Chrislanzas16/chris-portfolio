@@ -47,7 +47,7 @@ const Portfolio = () => {
       description:
         "This internship consisted of converting a static website into a dynamic application using various Node.js libraries such as Axios, Owl Carousel, and Animate on Scroll. Maintained version control with repository branches and pull requests on Github.",
       tags: ["React", "JavaScript", "Node.js", "Git"],
-      link: "https://chris-internship-npxwbthbx-chrislanzas16s-projects.vercel.app/",
+      link: "https://chris-internship.vercel.app/",
       image: "/Ultraverse.png",
       github: "https://github.com/Chrislanzas16/chris-internship.git",
     },
