@@ -22,8 +22,7 @@ const Portfolio = () => {
   const [isDarkMode, setIsDarkMode] = useState(true);
 
   const handleDownloadResume = () => {
-    // Replace this URL with your actual resume file path
-    const resumeUrl = "/ChristopherLanzasResume.pdf"; // Place your resume.pdf in the public folder
+    const resumeUrl = "/ChristopherLanzasResume.pdf";
     const link = document.createElement("a");
     link.href = resumeUrl;
     link.download = "Christopher_Lanzas_Resume.pdf";
@@ -141,7 +140,6 @@ const Portfolio = () => {
             : "bg-linear-to-br from-gray-50 via-purple-50 to-gray-50"
         }`}
       >
-        {/* Animated Background Elements */}
         <div className="fixed inset-0 overflow-hidden pointer-events-none">
           <div
             className={`absolute left-1/2 top-[45%] -translate-x-1/2 -translate-y-1/2 
@@ -161,9 +159,7 @@ const Portfolio = () => {
           />
         </div>
         ```
-        {/* Content Wrapper */}
         <div className="relative z-10">
-          {/* Navigation */}
           <nav
             className={`fixed top-0 w-full backdrop-blur-md z-50 border-b transition-colors duration-300 ${
               isDarkMode
@@ -179,7 +175,6 @@ const Portfolio = () => {
                   Frontend Developer
                 </div>
 
-                {/* Desktop Menu */}
                 <div className="hidden md:flex items-center space-x-8">
                   {["about", "projects", "skills", "contact"].map((item) => (
                     <button
@@ -217,7 +212,6 @@ const Portfolio = () => {
                   </button>
                 </div>
 
-                {/* Mobile Menu Button */}
                 <div className="md:hidden flex items-center gap-2">
                   <button
                     onClick={() => setIsDarkMode(!isDarkMode)}
@@ -241,7 +235,6 @@ const Portfolio = () => {
               </div>
             </div>
 
-            {/* Mobile Menu */}
             {isMenuOpen && (
               <div
                 className={`md:hidden border-t transition-colors ${
@@ -280,7 +273,6 @@ const Portfolio = () => {
             )}
           </nav>
 
-          {/* Hero Section */}
           <section className="relative overflow-hidden mt-16 min-h-[calc(100vh-64px)] flex items-center justify-center px-4 sm:px-6 lg:px-8">
             <div className="max-w-6xl mx-auto text-center">
               <h1
@@ -330,7 +322,6 @@ const Portfolio = () => {
             </div>
           </section>
 
-          {/* About Section */}
           <section
             id="about"
             className={`py-20 px-4 sm:px-6 lg:px-8 ${
@@ -424,7 +415,6 @@ const Portfolio = () => {
             </div>
           </section>
 
-          {/* Projects Section */}
           <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8">
             <div className="max-w-6xl mx-auto">
               <div className="flex items-center gap-3 mb-8">
@@ -520,7 +510,6 @@ const Portfolio = () => {
             </div>
           </section>
 
-          {/* Skills Section */}
           <section
             id="skills"
             className={`py-20 px-4 sm:px-6 lg:px-8 ${
@@ -580,7 +569,6 @@ const Portfolio = () => {
             </div>
           </section>
 
-          {/* Contact Section */}
           <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8">
             <div className="max-w-6xl mx-auto text-center">
               <div className="flex items-center justify-center gap-3 mb-8">
@@ -649,7 +637,6 @@ const Portfolio = () => {
             </div>
           </section>
 
-          {/* Footer */}
           <footer
             className={`py-8 px-4 border-t transition-colors ${
               isDarkMode
