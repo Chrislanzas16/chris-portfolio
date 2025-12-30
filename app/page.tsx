@@ -2,6 +2,9 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import { projects } from "./data/projects";
+import { skills, skillLogos } from "./data/skills";
+import { useMousePosition } from "./hooks/useMousePosition";
 import {
   Menu,
   X,
@@ -31,99 +34,7 @@ const Portfolio = () => {
     document.body.removeChild(link);
   };
 
-  const projects = [
-    {
-      title: "Netflix Clone",
-      description:
-        "A Netflix-style streaming app built with React, Vite, and Firebase. Features user authentication, movie browsing UI, dynamic content rendering using TMDB API, responsive design, and protected routes. Built to practice real-world app structure.",
-      tags: ["React", "Firebase", "Tailwind"],
-      link: "https://chris-movie-app.vercel.app/",
-      image: "/NetflixClone.png",
-      github: "https://github.com/Chrislanzas16/Netflix-Clone.git",
-    },
-    {
-      title: "Ultraverse",
-      description:
-        "This internship consisted of converting a static website into a dynamic application using various Node.js libraries such as Axios, Owl Carousel, and Animate on Scroll. Maintained version control with repository branches and pull requests on Github.",
-      tags: ["React", "JavaScript", "Node.js", "Git"],
-      link: "https://chris-internship.vercel.app/",
-      image: "/Ultraverse.png",
-      github: "https://github.com/Chrislanzas16/chris-internship.git",
-    },
-    {
-      title: "Summarist",
-      description:
-        "Subscription-based book streaming platform built with Next.js, Firebase, and Stripe. Features secure authentication, responsive UI, and an integrated audio player for listening to books in the browser.",
-      tags: ["Next.js", "Firebase", "Tailwind CSS"],
-      link: "https://virtual-internship-v2-zeta.vercel.app/",
-      image: "/Summarist.png",
-      github: "https://github.com/Chrislanzas16/Virtual-Internship-v2.git",
-    },
-  ];
-
-  const skills = [
-    {
-      category: "Frontend",
-      items: [
-        "React",
-        "Next.js",
-        "TypeScript",
-        "Tailwind CSS",
-        "JavaScript",
-        "HTML",
-        "CSS",
-      ],
-    },
-    {
-      category: "Backend/Database",
-      items: ["Firebase", "Firestore", "Firebase Auth", "Cloud Functions"],
-    },
-    {
-      category: "Tools & Others",
-      items: [
-        "Git",
-        "Vite",
-        "Vercel",
-        "Figma",
-        "Responsive UI / Mobile-First Design",
-      ],
-    },
-  ];
-
-  const skillLogos: Record<string, string> = {
-    React: "/skills/react.svg",
-    "Next.js": "/skills/next.svg",
-    TypeScript: "/skills/typescript.svg",
-    JavaScript: "/skills/javascript.svg",
-    "Tailwind CSS": "/skills/tailwind-css.svg",
-    HTML: "/skills/html.svg",
-    CSS: "/skills/css.svg",
-
-    Firebase: "/skills/firebase.svg",
-    Firestore: "/skills/firebase.svg",
-    "Firebase Auth": "/skills/firebase.svg",
-    "Cloud Functions": "/skills/firebase.svg",
-
-    Git: "/skills/git.svg",
-    Vercel: "/skills/vercel.png",
-    Figma: "/skills/figma.svg",
-    "Responsive UI / Mobile-First Design": "/skills/responsive.svg.png",
-    Vite: "/skills/vite.svg",
-  };
-
-  const [mousePos, setMousePos] = useState<{ x: number; y: number }>({
-    x: 0,
-    y: 0,
-  });
-
-  useEffect(() => {
-    const handleMove = (e: MouseEvent) => {
-      setMousePos({ x: e.clientX, y: e.clientY });
-    };
-
-    window.addEventListener("mousemove", handleMove);
-    return () => window.removeEventListener("mousemove", handleMove);
-  }, []);
+  const mousePos = useMousePosition()
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
