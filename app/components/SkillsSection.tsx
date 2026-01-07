@@ -9,6 +9,19 @@ type SkillsSectionProps = {
 };
 
 export default function SkillsSection({ isDarkMode }: SkillsSectionProps) {
+  const cardBase =
+    "rounded-xl p-6 border transition-all duration-200 hover:-translate-y-1 hover:shadow-xl";
+  const cardTheme = isDarkMode
+    ? "bg-slate-800/50 border-purple-500/20 hover:border-purple-400/60"
+    : "bg-white border-purple-200 shadow-lg hover:border-purple-300";
+
+  const chipBase =
+    "flex items-center gap-3 px-4 py-2.5 rounded-2xl text-base font-medium transition-all duration-150 hover:shadow-sm";
+
+  const chipTheme = isDarkMode
+    ? "bg-slate-900/60 text-gray-200 hover:bg-purple-500/20 hover:text-white"
+    : "bg-purple-50 text-gray-800 hover:bg-purple-100 hover:text-gray-900";
+
   return (
     <section
       id="skills"
@@ -30,41 +43,29 @@ export default function SkillsSection({ isDarkMode }: SkillsSectionProps) {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {skills.map((skillGroup, index) => (
-            <div
-              key={index}
-              className={`rounded-xl p-6 border transition-all duration-200 hover:-translate-y-1 hover:shadow-xl hover:border-purple-400/60 ${
-                isDarkMode
-                  ? "bg-slate-800/50 border-purple-500/20"
-                  : "bg-white border-purple-200 shadow-lg"
-              }`}
-            >
+            <div key={index} className={`${cardBase} ${cardTheme}`}>
               <h3 className="text-xl font-bold text-purple-400 mb-4">
                 {skillGroup.category}
               </h3>
 
-              <ul className="space-y-4">
-                {skillGroup.items.map((skill, i) => (
-                  <li
-                    key={i}
-                    className={`flex items-center gap-3 transition-transform duration-150 hover:translate-x-1 hover:text-purple-300 ${
-                      isDarkMode ? "text-gray-300" : "text-gray-700"
-                    }`}
-                  >
-                    {skillLogos[skill] ? (
-                      <Image
-                        src={skillLogos[skill]}
-                        alt={`${skill} logo`}
-                        width={30}
-                        height={30}
-                        className="w-6 h-6 object-contain"
-                      />
-                    ) : (
-                      <span className="w-3 h-3 bg-purple-400 rounded-full" />
+              <div className="flex flex-wrap gap-4 mt-1">
+                {skillGroup.items.map((skill) => (
+                  <span key={skill} className={`${chipBase} ${chipTheme}`}>
+                    {skillLogos[skill] && (
+                      <span className="w-5 h-5 grid place-items-center shrink-0">
+                        <Image
+                          src={skillLogos[skill]}
+                          alt={`${skill} logo`}
+                          width={20}
+                          height={20}
+                          className="w-4 h-4 object-contain"
+                        />
+                      </span>
                     )}
-                    <span>{skill}</span>
-                  </li>
+                    {skill}
+                  </span>
                 ))}
-              </ul>
+              </div>
             </div>
           ))}
         </div>

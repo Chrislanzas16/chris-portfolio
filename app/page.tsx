@@ -44,14 +44,6 @@ const Portfolio = () => {
       >
         <div className="fixed inset-0 overflow-hidden pointer-events-none">
           <div
-            className={`absolute left-1/2 top-[45%] -translate-x-1/2 -translate-y-1/2 
-              w-md h-112 rounded-full blur-3xl opacity-10 animate-pulse ${
-                isDarkMode ? "bg-blue-500" : "bg-blue-300"
-              }`}
-            style={{ animationDuration: "8s", animationDelay: "4s" }}
-          ></div>
-
-          <div
             className="absolute inset-0 pointer-events-none"
             style={{
               background: `radial-gradient(420px circle at ${mousePos.x}px ${mousePos.y}px, rgba(236,72,153,0.35), transparent 65%)`,

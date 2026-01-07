@@ -11,6 +11,16 @@ export default function HeroSection({
 }: HeroSectionProps) {
   return (
     <section className="relative overflow-hidden mt-16 min-h-[calc(100vh-64px)] flex items-center justify-center px-4 sm:px-6 lg:px-8">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div
+          className={`absolute left-1/2 top-[45%] -translate-x-1/2 -translate-y-1/2 
+              w-md h-112 rounded-full blur-3xl opacity-10 animate-pulse ${
+                isDarkMode ? "bg-blue-500" : "bg-blue-300"
+              }`}
+          style={{ animationDuration: "8s", animationDelay: "4s" }}
+        ></div>
+      </div>
+
       <div className="max-w-6xl mx-auto text-center">
         <h1
           className={`text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 fade-in-up ${
