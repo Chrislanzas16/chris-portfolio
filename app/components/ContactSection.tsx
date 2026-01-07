@@ -30,51 +30,88 @@ export default function ContactSection({ isDarkMode }: ContactSectionProps) {
           opportunities to be part of your visions.
         </p>
 
-        <div className="flex justify-center gap-6">
+        <div className="flex justify-center gap-8">
           <a
             href="https://github.com/Chrislanzas16"
             target="_blank"
             rel="noopener noreferrer"
-            className={`w-12 h-12 rounded-full flex items-center justify-center transition-colors ${
-              isDarkMode
-                ? "bg-slate-800 hover:bg-purple-500"
-                : "bg-purple-100 hover:bg-purple-500"
-            }`}
+            aria-label="Open GitHub profile"
+            className="flex flex-col items-center gap-2 group"
           >
-            <Github
-              className={isDarkMode ? "text-white" : "text-purple-600"}
-              size={24}
-            />
+            <div
+              className={`w-16 h-16 rounded-full flex items-center justify-center transition-all duration-200 group-hover:-translate-y-1 ${
+                isDarkMode
+                  ? "bg-slate-800 group-hover:ring-2 group-hover:ring-purple-500"
+
+                  : "bg-purple-100 group-hover:bg-purple-500"
+              }`}
+            >
+              <Github
+                className={isDarkMode ? "text-white" : "text-purple-600"}
+                size={28}
+              />
+            </div>
+            <span
+              className={`hidden sm:block text-sm transition-opacity duration-200 opacity-70 group-hover:opacity-100 ${
+                isDarkMode ? "text-gray-400" : "text-gray-600"
+              }`}
+            >
+              GitHub
+            </span>
           </a>
 
           <a
             href="https://www.linkedin.com/in/christopher-lanzas-12a325174"
             target="_blank"
             rel="noopener noreferrer"
-            className={`w-12 h-12 rounded-full flex items-center justify-center transition-colors ${
-              isDarkMode
-                ? "bg-slate-800 hover:bg-purple-500"
-                : "bg-purple-100 hover:bg-purple-500"
-            }`}
+            aria-label="Open LinkedIn profile"
+            className="flex flex-col items-center gap-2 group"
           >
-            <Linkedin
-              className={isDarkMode ? "text-white" : "text-purple-600"}
-              size={24}
-            />
+            <div
+              className={`w-16 h-16 rounded-full flex items-center justify-center transition-all duration-200 group-hover:-translate-y-1 ${
+                isDarkMode
+                  ? "bg-slate-800 group-hover:ring-2 group-hover:ring-purple-500"
+                  : "bg-purple-100 group-hover:bg-purple-500"
+              }`}
+            >
+              <Linkedin
+                className={isDarkMode ? "text-white" : "text-purple-600"}
+                size={28}
+              />
+            </div>
+            <span
+              className={`hidden sm:block text-sm transition-opacity duration-200 opacity-70 group-hover:opacity-100 ${
+                isDarkMode ? "text-gray-400" : "text-gray-600"
+              }`}
+            >
+              LinkedIn
+            </span>
           </a>
 
           <a
             href="mailto:chrislanzas89@gmail.com"
-            className={`w-12 h-12 rounded-full flex items-center justify-center transition-colors ${
-              isDarkMode
-                ? "bg-slate-800 hover:bg-purple-500"
-                : "bg-purple-100 hover:bg-purple-500"
-            }`}
+            aria-label="Send an email"
+            className="flex flex-col items-center gap-2 group"
           >
-            <Mail
-              className={isDarkMode ? "text-white" : "text-purple-600"}
-              size={24}
-            />
+            <div
+              className={`w-16 h-16 rounded-full flex items-center justify-center transition-all duration-200 group-hover:-translate-y-1 ${
+                isDarkMode
+                  ? "bg-slate-800 group-hover:ring-2 group-hover:ring-purple-500"
+                  : "bg-purple-100 group-hover:bg-purple-500"
+              }`}
+            >
+              <Mail
+                className={isDarkMode ? "text-white" : "text-purple-600"}
+                size={28}
+              />
+            </div>
+            <span
+              className={`hidden sm:block text-sm transition-opacity duration-200 opacity-70 group-hover:opacity-100 ${
+                isDarkMode ? "text-gray-400" : "text-gray-600"
+              }`}
+            >
+              Email
+            </span>
           </a>
         </div>
       </div>
