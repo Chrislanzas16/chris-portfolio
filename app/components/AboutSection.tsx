@@ -46,7 +46,7 @@ export default function AboutSection({ isDarkMode }: AboutSectionProps) {
                 <div className="absolute -inset-6 bg-radial-[circle_at_center] from-purple-500/25 via-pink-500/10 to-transparent pointer-events-none" />
 
                 <Image
-                  src="/Me.jpeg"
+                  src="/Me-profile.jpeg"
                   alt="Chris Lanzas"
                   fill
                   priority
