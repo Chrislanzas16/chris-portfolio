@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 
-import { useMousePosition } from "./hooks/useMousePosition";
 import ProjectsSection from "./components/ProjectsSection";
 import SkillsSection from "./components/SkillsSection";
 import AboutSection from "./components/AboutSection";
@@ -25,8 +24,6 @@ const Portfolio = () => {
     document.body.removeChild(link);
   };
 
-  const mousePos = useMousePosition();
-
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     element?.scrollIntoView({ behavior: "smooth" });
@@ -42,17 +39,6 @@ const Portfolio = () => {
             : "bg-linear-to-br from-gray-50 via-purple-50 to-gray-50"
         }`}
       >
-        <div className="fixed inset-0 overflow-hidden pointer-events-none">
-          <div
-            className="absolute inset-0 pointer-events-none"
-            style={{
-              background: `radial-gradient(420px circle at ${mousePos.x}px ${mousePos.y}px, rgba(236,72,153,0.35), transparent 65%)`,
-              transition: "background 0.12s ease-out",
-              mixBlendMode: "screen",
-            }}
-          />
-        </div>
-        ```
         <Navbar
           isDarkMode={isDarkMode}
           setIsDarkMode={setIsDarkMode}

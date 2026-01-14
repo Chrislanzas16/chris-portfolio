@@ -1,4 +1,5 @@
 "use client";
+import { useMousePosition } from "../hooks/useMousePosition";
 
 type HeroSectionProps = {
   isDarkMode: boolean;
@@ -9,6 +10,8 @@ export default function HeroSection({
   isDarkMode,
   scrollToSection,
 }: HeroSectionProps) {
+  const mousePos = useMousePosition();
+
   return (
     <section className="relative overflow-hidden mt-16 min-h-[calc(100vh-64px)] flex items-center justify-center px-4 sm:px-6 lg:px-8">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -19,6 +22,21 @@ export default function HeroSection({
               }`}
           style={{ animationDuration: "8s", animationDelay: "4s" }}
         ></div>
+      </div>
+
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: `radial-gradient(420px circle at ${mousePos.x}px ${mousePos.y}px, rgba(236,72,153,0.35), transparent 65%)`,
+            transition: "background 0.12s ease-out",
+            mixBlendMode: "screen",
+            WebkitMaskImage:
+              "linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%)",
+            maskImage:
+              "linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%)",
+          }}
+        />
       </div>
 
       <div className="max-w-6xl mx-auto text-center">
