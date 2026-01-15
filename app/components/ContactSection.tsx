@@ -26,8 +26,9 @@ export default function ContactSection({ isDarkMode }: ContactSectionProps) {
             isDarkMode ? "text-gray-300" : "text-gray-600"
           }`}
         >
-          I&apos;m always open to discussing new projects, creative ideas, or
-          opportunities to be part of your visions.
+          I&apos;m always open to chatting about new projects, creative ideas,
+          or opportunities to collaborate. If you have something in mind,
+          let&apos;s connect.
         </p>
 
         <div className="flex justify-center gap-8">
@@ -42,7 +43,6 @@ export default function ContactSection({ isDarkMode }: ContactSectionProps) {
               className={`w-16 h-16 rounded-full flex items-center justify-center transition-all duration-200 group-hover:-translate-y-1 ${
                 isDarkMode
                   ? "bg-slate-800 group-hover:ring-2 group-hover:ring-purple-500"
-
                   : "bg-purple-100 group-hover:bg-purple-500"
               }`}
             >

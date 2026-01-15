@@ -51,8 +51,17 @@ export default function Navbar({
       >
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <div className="text-2xl font-bold bg-linear-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-              Frontend Developer
+            <div className="leading-tight">
+              <div className="text-2xl font-bold bg-linear-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                Chris Lanzas
+              </div>
+              <div
+                className={`text-xs uppercase tracking-wide ${
+                  isDarkMode ? "text-gray-400" : "text-gray-700"
+                }`}
+              >
+                Frontend Developer
+              </div>
             </div>
 
             <div className="hidden md:flex items-center space-x-8">

@@ -16,7 +16,7 @@ export default function SkillsSection({ isDarkMode }: SkillsSectionProps) {
     : "bg-white border-purple-200 shadow-lg hover:border-purple-300";
 
   const chipBase =
-    "flex items-center gap-3 px-4 py-2.5 rounded-2xl text-base font-medium transition-all duration-150 hover:shadow-sm";
+    "flex items-center gap-3 px-4 py-2.5 rounded-2xl text-sm md:text-base font-medium transition-all duration-150 hover:shadow-sm";
 
   const chipTheme = isDarkMode
     ? "bg-slate-900/60 text-gray-200 hover:bg-purple-500/20 hover:text-white"
@@ -48,7 +48,7 @@ export default function SkillsSection({ isDarkMode }: SkillsSectionProps) {
                 {skillGroup.category}
               </h3>
 
-              <div className="flex flex-wrap gap-4 mt-1">
+              <div className="flex flex-wrap gap-3 md:gap-4 mt-1">
                 {skillGroup.items.map((skill) => (
                   <span key={skill} className={`${chipBase} ${chipTheme}`}>
                     {skillLogos[skill] && (
@@ -58,7 +58,7 @@ export default function SkillsSection({ isDarkMode }: SkillsSectionProps) {
                           alt={`${skill} logo`}
                           width={20}
                           height={20}
-                          className="w-4 h-4 object-contain"
+                          className="w-5 h-5 object-contain"
                         />
                       </span>
                     )}

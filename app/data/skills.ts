@@ -17,18 +17,12 @@ export const skills: SkillCategory[] = [
     ],
   },
   {
-    category: "Backend/Database",
-    items: ["Firebase", "Firestore", "Firebase Auth", "Cloud Functions"],
+    category: "Backend & BaaS",
+    items: ["Firebase Auth", "Firestore", "Cloud Functions"],
   },
   {
-    category: "Tools & Others",
-    items: [
-      "Git",
-      "Vite",
-      "Vercel",
-      "Figma",
-      "Responsive UI / Mobile-First Design",
-    ],
+    category: "Tools & Workflow",
+    items: ["Git", "Vite", "Vercel", "Figma", "Mobile-First Design"],
   },
 ];
 
@@ -41,14 +35,13 @@ export const skillLogos: Record<string, string> = {
   HTML: "/skills/html.svg",
   CSS: "/skills/css.svg",
 
-  Firebase: "/skills/firebase.svg",
-  Firestore: "/skills/firebase.svg",
   "Firebase Auth": "/skills/firebase.svg",
+  Firestore: "/skills/firebase.svg",
   "Cloud Functions": "/skills/firebase.svg",
 
   Git: "/skills/git.svg",
   Vercel: "/skills/vercel.png",
   Figma: "/skills/figma.svg",
-  "Responsive UI / Mobile-First Design": "/skills/responsive.svg.png",
+  "Mobile-First Design": "/skills/responsive.svg.png",
   Vite: "/skills/vite.svg",
 };

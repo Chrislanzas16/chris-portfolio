@@ -65,21 +65,17 @@ export default function AboutSection({ isDarkMode }: AboutSectionProps) {
                 <span className="font-semibold bg-linear-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent hover:scale-105 inline-block transition-transform cursor-default">
                   frontend developer
                 </span>{" "}
-                who builds fast, responsive web applications with{" "}
+                who builds fast, responsive web applications using{" "}
                 <span className="font-semibold bg-linear-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent hover:scale-105 inline-block transition-transform cursor-default">
                   React
                 </span>{" "}
                 and{" "}
                 <span className="font-semibold bg-linear-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent hover:scale-105 inline-block transition-transform cursor-default">
                   Next.js
-                </span>{" "}
-                with Firebase integration. I specialize in real-time features,
-                Firebase authentication, and data-driven interfaces that stay
-                clean,{" "}
-                <span className="font-semibold bg-linear-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent hover:scale-105 inline-block transition-transform cursor-default">
-                  maintainable,
-                </span>{" "}
-                and easy for teams to work with.
+                </span>
+                . I focus on creating product-style experiences like dashboards,
+                streaming platforms, and data-driven interfaces that feel smooth
+                and intuitive to use.
               </p>
 
               <p
@@ -87,14 +83,11 @@ export default function AboutSection({ isDarkMode }: AboutSectionProps) {
                   isDarkMode ? "text-gray-300" : "text-gray-700"
                 }`}
               >
-                I focus on component-based architecture, performance
-                optimization, and scalable state management to build apps that
-                feel smooth for users and reliable for developers. My approach
-                combines technical precision with{" "}
-                <span className="font-semibold bg-linear-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent hover:scale-105 inline-block transition-transform cursor-default">
-                  user-centered design,
-                </span>{" "}
-                ensuring what I build is both powerful and intuitive.
+                Through projects like my Netflix-style app, crypto tracker, and
+                Summarist, I&apos;ve worked with authentication, APIs, real-time
+                data, and reusable component systems. I care deeply about
+                performance, clean UI, and writing code that&apos;s easy for
+                teams to maintain and scale.
               </p>
 
               <p
@@ -102,12 +95,12 @@ export default function AboutSection({ isDarkMode }: AboutSectionProps) {
                   isDarkMode ? "text-gray-300" : "text-gray-700"
                 }`}
               >
-                I stay current with modern web practices and am excited to
-                contribute to{" "}
+                I&apos;m excited to contribute to{" "}
                 <span className="font-semibold bg-linear-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent hover:scale-105 inline-block transition-transform cursor-default">
-                  meaningful projects
+                  meaningful products
                 </span>{" "}
-                where I can continue growing as a developer.
+                where I can keep growing as a developer while helping ship
+                features that real users rely on.
               </p>
             </div>
           </div>

@@ -53,7 +53,7 @@ export default function HeroSection({
             isDarkMode ? "text-gray-300" : "text-gray-600"
           }`}
         >
-          I like building{" "}
+          I build{" "}
           <span className="font-bold bg-linear-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent hover:scale-110 inline-block transition-transform cursor-default">
             modern
           </span>
@@ -61,7 +61,11 @@ export default function HeroSection({
           <span className="font-bold bg-linear-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent hover:scale-110 inline-block transition-transform cursor-default">
             responsive
           </span>{" "}
-          web applications with React, Next.js & Typescript.
+          web apps with React, Next.js, and{" "}
+          <span className="font-bold bg-linear-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent hover:scale-110 inline-block transition-transform cursor-default">
+            TypeScript
+          </span>
+          , from dashboards and crypto trackers to Netflix-style experiences.
         </p>
 
         <div className="flex justify-center gap-4 flex-wrap fade-in-up delay-600">
