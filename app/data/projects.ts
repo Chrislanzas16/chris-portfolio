@@ -35,4 +35,13 @@ export const projects: Project[] = [
     image: "/Summarist.png",
     github: "https://github.com/Chrislanzas16/Virtual-Internship-v2.git",
   },
+  {
+    title: "Live Crypto Tracker",
+    description:
+      "A real-time cryptocurrency tracking dashboard that pulls live market data from a public API. Users can view price changes, market trends, and key stats with a responsive, modern UI.",
+    tags: ["React", "API", "TypeScript", "Real-Time Data"],
+    link: "https://crypto-project-psi-blue.vercel.app/",
+    image: "/CryptoTracker.png",
+    github: "https://github.com/Chrislanzas16/crypto-project",
+  },
 ];

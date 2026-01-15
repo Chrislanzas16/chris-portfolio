@@ -23,7 +23,7 @@ export default function ProjectsSection({ isDarkMode }: ProjectsSectionProps) {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <div
               key={index}
@@ -33,12 +33,16 @@ export default function ProjectsSection({ isDarkMode }: ProjectsSectionProps) {
                   : "bg-white border-purple-200 hover:border-purple-400 hover:shadow-xl"
               }`}
             >
-              <Image
-                src={project.image}
-                alt={`${project.title} screenshot`}
-                fill
-                className="object-contain object-center bg-slate-900 duration-500 group-hover:scale-105 transition-transform"
-              />
+              <div className="absolute inset-0 p-4 md:p-5">
+                <div className="relative w-full h-full">
+                  <Image
+                    src={project.image}
+                    alt={`${project.title} screenshot`}
+                    fill
+                    className="object-contain object-center duration-500 group-hover:scale-105 transition-transform"
+                  />
+                </div>
+              </div>
 
               <div className="absolute inset-0 bg-black/80 opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex h-full flex-col p-6 justify-end">
                 <div
